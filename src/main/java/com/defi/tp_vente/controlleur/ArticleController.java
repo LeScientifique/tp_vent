@@ -55,6 +55,7 @@ public class ArticleController {
 
     @GetMapping("article/etat")
     public String listeSeuil(Model model){
+        articleService.changerEtatArticle(articleService.showAllArticles());
         model.addAttribute("listeSeuil",articleService.articleEtatCritique(articleService.showAllArticles()));
         return "article/listeSeuil";
     }
